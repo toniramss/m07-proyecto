@@ -229,7 +229,7 @@ a {
 }
 #botonPistaAnterior {
    width: 40%;
-   background-image: url(../img/anterior.png);
+   background-image: url(img/anterior.png);
    background-position: center;
    background-size: contain;
    background-repeat: no-repeat;
@@ -247,7 +247,7 @@ a {
 }
 #botonPlayPause {
     width: 40%;
-    background-image: url(../img/play.png);
+    background-image: url(img/play.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -260,7 +260,7 @@ a {
 }
 #botonPistaSiguiente {
     width: 40%;
-    background-image: url(../img/siguiente.png);
+    background-image: url(img/siguiente.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -536,9 +536,13 @@ a {
 
 /*-------------------Estados de ánimo------------*/
 #desplegableOpciones {
+    width: 75%;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.381);
     border-radius: 10px;
+}
+#desplegableOpciones:hover{
+    border-color: white;
 }
 #labelTituloEstadosAnimo {
     color: white;

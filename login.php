@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($contraseña, $usuario['contraseña'])) {
 
                 $_SESSION['nombre'] = $nombre;
+                $_SESSION['rol'] = $usuario['rol'];
                 if ($usuario['rol'] == "administrador") {
                     header("Location: dashboard.php");
                 } else header("Location: musica.php");

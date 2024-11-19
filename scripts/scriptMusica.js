@@ -5,7 +5,6 @@
 
 //sessionStorage.setItem("reproduciendo", false);
 
-const buttonPanelDeControl = document.getElementById("buttonPanelDeControl");
 
 
 let listaCanciones;
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 async function cargarListaCanciones() {
-    let response = await fetch('../docs/listaCanciones.json');
+    let response = await fetch('docs/listaCanciones.json');
     listaCanciones = await response.json();
     listaCanciones.forEach(cancion => {
         console.log(cancion.titulo);
@@ -108,7 +107,7 @@ botonPistaAnterior.addEventListener("click", function() {
 
     textViewTituloCancion.innerHTML = listaCancionesFiltro[posicionArrayCancionAnterior].titulo;
     textViewArtistaCancion.innerHTML = listaCancionesFiltro[posicionArrayCancionAnterior].artista;
-    imageViewDiscoCancion.src = "../img/Discos/" + listaCancionesFiltro[posicionArrayCancionAnterior].idCancion + ".png";
+    imageViewDiscoCancion.src = "img/Discos/" + listaCancionesFiltro[posicionArrayCancionAnterior].idCancion + ".png";
 
     pistaActual = listaCancionesFiltro[posicionArrayCancionAnterior].idCancion;
 
@@ -127,14 +126,14 @@ botonPlayPause.addEventListener("click", function(){
         reproduciendo = false;
 
         //Cambiar icono boton
-        botonPlayPause.style.backgroundImage = "url(../img/play.png)";
+        botonPlayPause.style.backgroundImage = "url(img/play.png)";
     } else {
 
         play();
 
         reproduciendo = true;
 
-        botonPlayPause.style.backgroundImage = "url(../img/pause.png)";
+        botonPlayPause.style.backgroundImage = "url(img/pause.png)";
     }
 
 }, false);
@@ -149,7 +148,7 @@ botonPistaSiguiente.addEventListener("click", function() {
 
     textViewTituloCancion.innerHTML = listaCancionesFiltro[posicionArrayCancionAnterior].titulo;
     textViewArtistaCancion.innerHTML = listaCancionesFiltro[posicionArrayCancionAnterior].artista;
-    imageViewDiscoCancion.src = "../img/Discos/" + listaCancionesFiltro[posicionArrayCancionAnterior].idCancion + ".png";
+    imageViewDiscoCancion.src = "img/Discos/" + listaCancionesFiltro[posicionArrayCancionAnterior].idCancion + ".png";
 
     pistaActual = listaCancionesFiltro[posicionArrayCancionAnterior].idCancion;
 
@@ -273,7 +272,7 @@ function reproducirPista(rutaCancion) {
     //cancionActual.currentTime = 0;
     cancionActual.play();
 
-    botonPlayPause.style.backgroundImage = "url(../img/pause.png)";
+    botonPlayPause.style.backgroundImage = "url(img/pause.png)";
 
     return cancionActual;
     
@@ -401,7 +400,7 @@ function crearListaDeReproduccion() {
             //Reproducir pista seleccionada
             console.log("Se reproduce la pista " + cancion.idCancion);
 
-            imageViewDiscoCancion.src = "../img/Discos/" + cancion.idCancion + ".png";
+            imageViewDiscoCancion.src = "img/Discos/" + cancion.idCancion + ".png";
             textViewTituloCancion.innerHTML = cancion.titulo;
             textViewArtistaCancion.innerHTML = cancion.artista;
 
@@ -423,7 +422,7 @@ function crearListaDeReproduccion() {
         let imageViewCancionAdapter = document.createElement("img");
         imageViewCancionAdapter.id = "imageViewCancionAdapter";
         imageViewCancionAdapter.className = "imageViewCancionAdapter";
-        imageViewCancionAdapter.src = "../img/Discos/" + cancion.idCancion + ".png";
+        imageViewCancionAdapter.src = "img/Discos/" + cancion.idCancion + ".png";
         
         
         //Agregar imageView al div

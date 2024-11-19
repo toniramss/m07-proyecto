@@ -154,5 +154,11 @@ $usuarios = leerUsuarios();
         <button type="submit" name="editar">Actualizar Usuario</button>
     </form>
     <?php endif; endif; ?>
+
+
+    <a href="musica.php">
+        <button href>Musica</button>
+    </a>
+    
 </body>
 </html>

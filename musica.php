@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+
 
 ?>
 
@@ -9,8 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Música</title>
-    <script type="module" src="scripts/scriptMusica.js" defer></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,7 +41,14 @@
 
                     <br><br>
 
-                    <button id="buttonPanelDeControl" class="buttonPanelDeControl">Panel de control</button>
+                    <?php
+
+                        if ($_SESSION['rol'] == 'administrador'){
+                            echo '<button id="buttonPanelDeControl" class="buttonPanelDeControl" onclick="window.location.href=\'dashboard.php\'">Panel de control</button>';
+                        }
+
+
+                    ?>
                     
                 </div>
 
@@ -112,5 +121,6 @@
     </div>
 
 </body>
-
+<script type="module" src="scripts/scriptMusica.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
 </html>
