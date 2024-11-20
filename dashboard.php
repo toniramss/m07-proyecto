@@ -12,6 +12,7 @@ function guardarUsuarios($usuarios) {
 
 // Validación de los datos del usuario
 function validarUsuario($nombre, $contraseña, $rol) {
+    //Si el usuario o la contraseña estan vacios mandar mensaje
     if (empty($nombre) || empty($contraseña) || empty($rol)) {
         return "Todos los campos son requeridos.";
     }
@@ -20,14 +21,20 @@ function validarUsuario($nombre, $contraseña, $rol) {
 
 // Crear un nuevo usuario
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['crear'])) {
+
+    //Datos del formulario
     $nombre = $_POST['nombre'];
     $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
     $rol = $_POST['rol'];
 
     // Validación de los datos
     $error = validarUsuario($nombre, $_POST['contraseña'], $rol);
+
+    //Si error es diferente de null o vacio muestra el error
     if ($error) {
         echo $error;
+        
+        //Si no añadir usuario
     } else {
         // Leer usuarios y añadir el nuevo
         $usuarios = leerUsuarios();

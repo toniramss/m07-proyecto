@@ -93,11 +93,11 @@
                             <label class="labelBarras">Volumen</label>
                             <input type="range" id="barraVolumen" class="barrasConfiguracion" min="0" max="1" step="0.01">
 
-                            <label class="labelBarras">Agudos</label>
-                            <input type="range" id="barraAgudos" class="barrasConfiguracion" min="0" max="20" step="1" value="0">
+                            <label class="labelBarras" hidden>Agudos</label>
+                            <input hidden type="range" id="barraAgudos" class="barrasConfiguracion" min="0" max="20" step="1" value="0">
 
-                            <label class="labelBarras">Graves</label>
-                            <input type="range" id="barraGraves" class="barrasConfiguracion" min="0" max="20" step="1" value="0">
+                            <label hidden class="labelBarras">Graves</label>
+                            <input hidden type="range" id="barraGraves" class="barrasConfiguracion" min="0" max="20" step="1" value="0">
                         
                             <br><br>
                         
